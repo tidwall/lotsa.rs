@@ -1,7 +1,7 @@
 # lotsa
 
 [![travis](https://img.shields.io/travis/tidwall/lotsa.rs.svg)](https://travis-ci.org/tidwall/lotsa.rs/)
-[![license](https://img.shields.io/crates/l/lotsa.svg)](https://crates.io/crates/lotsa/)
+[![license](https://img.shields.io/crates/l/lotsa.svg)](LICENSE)
 [![crates.io](https://img.shields.io/crates/d/lotsa.svg)](https://crates.io/crates/lotsa)
 [![version](https://img.shields.io/crates/v/lotsa.svg)](https://crates.io/crates/lotsa/)
 [![documentation](https://docs.rs/lotsa/badge.svg)](https://docs.rs/lotsa/)
