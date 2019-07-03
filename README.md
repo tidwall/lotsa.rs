@@ -6,7 +6,7 @@ This is port of the Go library https://github.com/tidwall/lotsa.
 
 ## Example 
 
-```
+```rust
 fn main() {
     // The `i` and `thread` params correspond to the op index and thread
     // number, respectively.
