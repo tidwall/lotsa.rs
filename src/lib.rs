@@ -28,7 +28,7 @@ pub fn ops(nops: u32, threads: u32, f: impl Fn(u32, u32)) {
     if threads != 1 {
         print!(" over {} threads", threads);
     }
-    println!(" in {} secs ({} ops/sec)", secs, commaize(ops_sec));
+    println!(" in {:.3} secs ({} ops/sec)", secs, commaize(ops_sec));
 }
 
 fn commaize(num: u64) -> String {
