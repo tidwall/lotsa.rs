@@ -7,6 +7,7 @@ pub fn ops(nops: u32, threads: u32, mut f: impl FnMut(u32, u32)) {
     } else {
         nops / threads
     };
+    let mut i = 0;
     let mut remaining = nops;
     let now = std::time::Instant::now();
     for _ in 0..threads {
@@ -17,7 +18,8 @@ pub fn ops(nops: u32, threads: u32, mut f: impl FnMut(u32, u32)) {
         };
         remaining -= take;
         for _ in 0..take {
-            f(0, 0);
+            f(i, 0);
+            i+=1;
         }
     }
     let ms = now.elapsed().as_millis();
