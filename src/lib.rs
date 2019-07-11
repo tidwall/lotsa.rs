@@ -1,4 +1,4 @@
-pub fn ops(nops: u32, threads: u32, f: impl Fn(u32, u32)) {
+pub fn ops(nops: u32, threads: u32, mut f: impl FnMut(u32, u32)) {
     if threads != 1 {
         panic!("support for multiple threads is not supported yet");
     }
