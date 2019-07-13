@@ -26,7 +26,7 @@ pub fn ops(nops: u32, threads: u32, mut f: impl FnMut(u32, u32)) {
     let secs = (ms as f64) / 1000.0;
     let ops_sec = ((nops as f64) / secs) as u64;
 
-    print!("{} ops", nops);
+    print!("{} ops", commaize(nops as u64));
     if threads != 1 {
         print!(" over {} threads", threads);
     }
