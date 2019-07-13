@@ -19,18 +19,21 @@ pub fn ops(nops: u32, threads: u32, mut f: impl FnMut(u32, u32)) {
         remaining -= take;
         for _ in 0..take {
             f(i, 0);
-            i+=1;
+            i += 1;
         }
     }
-    let ms = now.elapsed().as_millis();
-    let secs = (ms as f64) / 1000.0;
+    let elapsed = now.elapsed();
+    let nano = elapsed.as_nanos();
+    let ms = elapsed.as_millis();
+    let secs = nano as f64 / 1e9;
     let ops_sec = ((nops as f64) / secs) as u64;
+    let nsop = (nano as f64 / nops as f64) as u64;
 
     print!("{} ops", commaize(nops as u64));
     if threads != 1 {
         print!(" over {} threads", threads);
     }
-    println!(" in {:.3} secs ({} ops/sec)", secs, commaize(ops_sec));
+    println!(" in {}ms, {}/sec, {} ns/op", ms, commaize(ops_sec), nsop);
 }
 
 fn commaize(num: u64) -> String {
